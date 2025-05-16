@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* Error: Can't find stylesheet to import.
+ *     ,
+ * 120 | @import "node_modules/bootstrap/scss/functions";
+ *     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *     '
+ *   light\common.scss 120:9  @import
+ *   style.scss 1:9           root stylesheet */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a     ╷\a 120 │ @import \"node_modules/bootstrap/scss/functions\";\a     │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a     ╵\a   light\\common.scss 120:9  @import\a   style.scss 1:9           root stylesheet";
+}
+
+/*# sourceMappingURL=style.css.map */
