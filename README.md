@@ -101,9 +101,6 @@ php artisan serve
 ```
 Visit: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 Dashboard: Visit: [http://127.0.0.1:8000/admin/dashboard](http://127.0.0.1:8000/admin/dashboard)
-
-
-
 ---
 
 ## ✨ **Contribution Guidelines**
