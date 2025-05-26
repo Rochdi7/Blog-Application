@@ -10,28 +10,30 @@ use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\Admin\RoleController as AdminRoleController;
 use App\Http\Controllers\Admin\PermissionController;
-
+use App\Http\Controllers\ProfileController;
 
 Route::get('/images/{shortUuid}/{id}/{fileName}', [MediaController::class, 'shortShow'])->name('media.short');
-
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/category/{slug}', [HomeController::class, 'index'])->name('category.posts');
 
-
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-
 
 Route::prefix('admin')->as('admin.')->group(function () {
     Route::view('/', 'admin.index')->name('index');
     Route::resource('categories', AdminCategoryController::class);
     Route::resource('posts', AdminPostController::class);
-    Route::resource('users', AdminUserController::class); 
-    Route::resource('roles', AdminRoleController::class); 
+    Route::resource('users', AdminUserController::class);
+    Route::resource('roles', AdminRoleController::class);
     Route::resource('permissions', PermissionController::class);
-
 });
 
-
-
 Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('post.show');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
