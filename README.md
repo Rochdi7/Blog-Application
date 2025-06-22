@@ -15,7 +15,7 @@ A powerful and flexible **Blog Application** built with **Laravel**, providing a
 - 🔐 Role-based Access Control (Admin, Editor, User).
 - 📂 Media Library for file management.
 - 🌐 Pagination, Search, and Filters.
-- 🗃️ Laravel Filament for easy admin panel management.
+- 🗃️ Star Admin 2 Template for easy admin panel management.
 - 💾 Database Migrations and Seeders for setup.
 
 ---
